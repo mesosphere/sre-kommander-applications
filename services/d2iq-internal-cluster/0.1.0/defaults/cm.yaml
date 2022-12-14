@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: d2iq-internal-cluster-0.1.0-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    # Default values for d2iq-internal-cluster.
+    # This is a YAML-formatted file.
+    # Declare variables to be passed into your templates.
+
+    dkpDefaultIngressService: kommander-traefik
+    # dkpDefaultIngressServiceNamespace: <if different than the applied workspace namespace>
+
+    clusterIssuerName: d2iq-clusterissuer
+    clusterIssuerAnnotations: {}
+    # clusterIssuer configuration. The content is similar to clusterissuer.spec
+    clusterIssuer:
+      acme:
+        server: https://acme-v02.api.letsencrypt.org/directory
+        solvers:
+        - http01:
+            ingress:
+              class: kommander-traefik
+        privateKeySecretRef:
+          name: d2iq-clusterissuer
+
+    externalAccountBindingSecretName: d2iq-clusterissuer-external-id
+    # when set create a secret with externalAccountBindingSecretKey as content of secret
+    externalAccountBindingSecretKey: ""
