@@ -27,5 +27,4 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: nginx-ingress-controller-0.15.2-defaults
-
-
+  targetNamespace: ${releaseNamespace}
