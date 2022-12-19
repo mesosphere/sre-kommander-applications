@@ -1,0 +1,28 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: sre-internal-cluster
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: d2iq-internal-cluster
+      sourceRef:
+        kind: HelmRepository
+        name: sre-kommander-applications-helm-repo
+        namespace: ${workspaceNamespace}
+      version: 0.1.3
+  interval: 15s
+  install:
+    remediation:
+      retries: 30
+    createNamespace: true
+  upgrade:
+    remediation:
+      retries: 30
+  releaseName: d2iq-internal-cluster
+  valuesFrom:
+    - kind: ConfigMap
+      name: d2iq-internal-cluster-0.1.3-defaults
+  targetNamespace: ${releaseNamespace}
