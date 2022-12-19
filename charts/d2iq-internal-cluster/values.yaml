@@ -21,3 +21,7 @@ clusterIssuer:
 externalAccountBindingSecretName: d2iq-clusterissuer-external-id
 # when set create a secret with externalAccountBindingSecretKey as content of secret
 externalAccountBindingSecretKey: ""
+# set true if secretkey is not base64 encoded
+externalAccountBindingSecretKeyPlainText: false 
+# the key being used to assign `externalAccountBindingSecretKey` to
+externalAccountBindingSecretKeyKeyname: "secret"
