@@ -3,6 +3,16 @@ entries:
   d2iq-internal-cluster:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2022-12-19T09:00:59.400086637Z"
+    description: A Helm chart applying custom resources to internal clusters at D2iQ
+    digest: f0441d6c0c42b0f30d97de9f7b5fbc89854027bb686d2edf00624f3fa3e660c5
+    name: d2iq-internal-cluster
+    type: application
+    urls:
+    - https://github.com/mesosphere/sre-kommander-applications/releases/download/d2iq-internal-cluster-0.1.2/d2iq-internal-cluster-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-12-19T08:38:42.031338245Z"
     description: A Helm chart applying custom resources to internal clusters at D2iQ
     digest: 9f30924fccc5c4c8b9a84ef76113ec4a74b032dfe057e7373fdab42cb773ab1f
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/mesosphere/sre-kommander-applications/releases/download/d2iq-internal-cluster-0.1.0/d2iq-internal-cluster-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-19T08:38:42.031343545Z"
+generated: "2022-12-19T09:00:59.400102136Z"
