@@ -1,0 +1,40 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: kommander-traefik
+    traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+    traefik.ingress.kubernetes.io/router.middlewares: default-strip-dkp-api-server-prefix@kubernetescrd
+    traefik.ingress.kubernetes.io/router.tls: "true"
+  name: kubernetes-external-oidc-endpoints
+  namespace: default
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: kubernetes
+            port:
+              name: https
+        path: /dkp/api-server/.well-known/openid-configuration
+        pathType: Prefix
+      - backend:
+          service:
+            name: kubernetes
+            port:
+              name: https
+        path: /dkp/api-server/openid/v1/jwks
+        pathType: Prefix
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: strip-dkp-api-server-prefix
+  namespace: default
+spec:
+  stripPrefix:
+    prefixes:
+    - /dkp/api-server
