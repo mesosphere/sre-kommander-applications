@@ -11,7 +11,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: arangodb.github.io-kube-arangodb
-        namespace: ${workspaceNamespace}
+        namespace: ${releaseNamespace}
       version: 1.2.23
   interval: 15s
   install:
