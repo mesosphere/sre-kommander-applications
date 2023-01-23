@@ -24,4 +24,7 @@ spec:
       retries: 30
   timeout: 5m0s
   releaseName: kube-arangodb
+  valuesFrom:
+    - kind: ConfigMap
+      name: kube-arangodb-1.2.23-defaults
   targetNamespace: ${releaseNamespace}
