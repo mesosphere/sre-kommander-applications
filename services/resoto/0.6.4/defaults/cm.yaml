@@ -13,7 +13,7 @@ data:
     # -- Install ArangoDB operator as dependency.
     arangodb:
       # -- You can disable the ArangoDB operator dependency by setting this to false.
-      enabled: true
+      enabled: false
 
       # -- Defines the ArangoDB deployment and database.
       deployment:
