@@ -1,0 +1,10 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: arangodb.github.io-kube-arangodb
+  namespace: ${workspaceNamespace}
+spec:
+  interval: 10m
+  timeout: 1m
+  url: "https://arangodb.github.io/kube-arangodb/"
