@@ -9,8 +9,8 @@ spec:
     spec:
       chart: grafana-operator
       sourceRef:
-        kind: OCIRepository
-        name: oci-ghcr.io-grafana-operator-5.3.0
+        kind: Helmrepository
+        name: oci-ghcr.io-grafana-operator
         namespace: ${workspaceNamespace}
       version: 5.3.0
   interval: 15s

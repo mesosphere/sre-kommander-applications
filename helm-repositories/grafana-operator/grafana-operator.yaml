@@ -1,12 +1,11 @@
 ---
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: OCIRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
 metadata:
-  name: oci-ghcr.io-grafana-operator-5.3.0
+  name: oci-ghcr.io-grafana-operator
   namespace: ${workspaceNamespace}
 spec:
   interval: 10m
   timeout: 1m
   url: "oci://ghcr.io/grafana-operator/helm-charts/grafana-operator"
-  ref:
-    tag: v5.3.0
+  type: oci
