@@ -7,5 +7,5 @@ metadata:
 spec:
   interval: 10m
   timeout: 1m
-  url: "oci://ghcr.io/grafana-operator/helm-charts/grafana-operator"
+  url: "oci://ghcr.io/grafana-operator/helm-charts"
   type: oci
