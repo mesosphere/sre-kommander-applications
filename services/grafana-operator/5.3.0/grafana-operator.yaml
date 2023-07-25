@@ -12,7 +12,7 @@ spec:
         kind: HelmRepository
         name: oci-ghcr.io-grafana-operator
         namespace: ${workspaceNamespace}
-      version: 5.3.0
+      version: v5.3.0
   interval: 15s
   install:
     crds: CreateReplace
